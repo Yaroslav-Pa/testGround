@@ -10,3 +10,8 @@ interactive rebase
 interactive додає можливість змінювати та редагувати зроблені комміти
 
 git patch
+де факто це cherry pick але зі створенням файлу (який можна відправити)
+create
+git format-patch -1 [hash] -o [dir]
+apply
+git am --3way --ignore-space-change [.\patches\0001-patch.patch]
