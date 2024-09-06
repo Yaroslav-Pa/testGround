@@ -1,3 +1,4 @@
+--Git
 git reset (hard, mixed, soft)
 Перенос на вказаний коміт, 
 hard - повністю видаляє зміни 
@@ -15,3 +16,14 @@ create
 git format-patch -1 [hash] -o [dir]
 apply
 git am --3way --ignore-space-change [.\patches\0001-patch.patch]
+
+---TS 
+exhaustive check
+Exhaustive Type Checking is when your static compiler checks that you're not leaving a possibility unchecked.
+Тож якщо у тебе А може бути "name" або "surname", та є swith chase то ти має оброботати усі можливі варіації, а exhaustive check перевіряє що ти "виснажив" усі варіації
+https://www.jackfranklin.co.uk/blog/typescript-exhaustive-branches/
+
+---JS
+guard clause
+це просто перевірка, яка негайно завершує функцію, або з return, або з винятком.
+https://refactoring.guru/uk/replace-nested-conditional-with-guard-clauses
