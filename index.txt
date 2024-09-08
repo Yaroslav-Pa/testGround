@@ -27,3 +27,66 @@ https://www.jackfranklin.co.uk/blog/typescript-exhaustive-branches/
 guard clause
 це просто перевірка, яка негайно завершує функцію, або з return, або з винятком.
 https://refactoring.guru/uk/replace-nested-conditional-with-guard-clauses
+
+--Переписування callbacks на Promises й на async/await
+Початковий callback 
+function fetchData(callback) {
+  setTimeout(() => {
+    callback(null, 'Data received');
+  }, 1000);
+}
+
+fetchData((error, data) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log(data);
+  }
+});
+
+Promises:
+function fetchData() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve('Data received');
+    }, 1000);
+  });
+}
+
+fetchData()
+  .then(data => console.log(data))
+  .catch(error => console.error(error));
+
+async/await:
+async function fetchData() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve('Data received');
+    }, 1000);
+  });
+}
+async function getData() {
+  try {
+    const data = await fetchData();
+    console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+getData();
+
+
+--Обертання чогось у Promise
+function wrapSyncInPromise() {
+  return new Promise((resolve, reject) => {
+    try {
+      const result = syncOperation(); // Виконуємо операцію
+      resolve(result);                // Якщо успіх — викликаємо resolve
+    } catch (error) {
+      reject(error);                  // Якщо сталася помилка — reject
+    }
+  });
+}
+
+--RxJs
+- бібліотека для створення асинхроних та подійно-орентованих програм за допомогою observable collections
