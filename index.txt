@@ -90,3 +90,12 @@ function wrapSyncInPromise() {
 
 --RxJs
 - бібліотека для створення асинхроних та подійно-орентованих програм за допомогою observable collections
+
+
+as
+dataas
+dataasd
+asd
+asd
+asdd
+asd
